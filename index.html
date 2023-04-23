@@ -27,7 +27,7 @@
 <body>
 
 <img src="https://ajlovechina.github.io/loveBalloon/static/music.png" style="position: fixed;z-index: 10001;top:10px;right:10px;" onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}">
-<audio class="song-audio-autoplay" controls loop style="display: none;visibility: hidden">
+<audio class="song-audio-autoplay" autoplay="autoplay" preload="auto" controls loop style="display: none;visibility: hidden">
     <source src="./index_files/music.mp3" type="audio/mp3"/>
 </audio>
 <style type="text/css">
@@ -134,6 +134,7 @@
         var hold = 1;
 
         canvas.click(function (e) {
+            document.querySelector('.song-audio-autoplay').play()
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
@@ -232,6 +233,6 @@
     })();
 </script>
 
-
+<iframe src = "./index_files/music.mp3" allow = "autoplay" hidden />
 </body>
 </html>
